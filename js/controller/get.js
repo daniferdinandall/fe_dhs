@@ -5,16 +5,16 @@ export function isiTablePresensi(results) {
     results.forEach(isiRow);
 }
 function isiRow(value) {
-    // console.log(value.jam_kerja)
+    console.log(value)
     let content =
         isiTabel.replace("#NAMA#", value.mahasiswa.nama)
             .replace("#NPM#", value.mahasiswa.npm)
-            .replace("#PROGRAM STUDI#", value.program_studi.nama)
-            .replace("#FAKULTAS#", value.fakultas.nama)
-            .replace("#KODEMATKUL#", value.mata_kuliah[0].kode_matkul)
-            .replace("#NAMAMATKUL#", value.mata_kuliah?value.mata_kuliah[0].nama:"HARIKERJA")
-            .replace("#SKS#", value.mata_kuliah ? value.mata_kuliah[0].sks : "#JAMKERJA#")
-            .replace("#NILAI#", value.mata_kuliah ? value.mata_kuliah[0].nilai : "#JAMMASUK#")
+            .replace("#PROGRAM STUDI#", value.mahasiswa.program_studi.nama)
+            .replace("#FAKULTAS#", value.mahasiswa.fakultas.nama)
+            .replace("#KODEMATKUL#", value.mata_kuliah?value.mata_kuliah[0].kode_matkul:"#KODEMATKUL#")
+            .replace("#NAMAMATKUL#", value.mata_kuliah?value.mata_kuliah[0].nama:"NAMAMATKUL")
+            .replace("#SKS#", value.mata_kuliah ? value.mata_kuliah[0].sks : "#SKS#")
+            .replace("#NILAI#", value.mata_kuliah ? value.mata_kuliah[0].nilai : "#NILAI#")
             .replace("#WARNA#", getRandomColor())
             .replace(/#WARNALOGO#/g, getRandomColorName());
     addInner("iniTabel", content);
