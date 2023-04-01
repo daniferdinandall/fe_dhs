@@ -6,16 +6,16 @@ export function isiTablePresensi(results) {
 }
 function isiRow(value) {
     console.log(value)
-    // let content =
-    //     isiTabel.replace("#NAMA#", value.mahasiswa.nama)
-    //         .replace("#NPM#", value.mahasiswa.npm)
-    //         .replace("#PROGRAM STUDI#", value.mahasiswa.program_studi.nama)
-    //         .replace("#FAKULTAS#", value.mahasiswa.fakultas.nama)
-    //         .replace("#KODEMATKUL#", value.mata_kuliah?value.mata_kuliah[0].kode_matkul:"#KODEMATKUL#")
-    //         .replace("#NAMAMATKUL#", value.mata_kuliah?value.mata_kuliah[0].nama:"NAMAMATKUL")
-    //         .replace("#SKS#", value.mata_kuliah ? value.mata_kuliah[0].sks : "#SKS#")
-    //         .replace("#NILAI#", value.mata_kuliah ? value.mata_kuliah[0].nilai : "#NILAI#")
-    //         .replace("#WARNA#", getRandomColor())
-    //         .replace(/#WARNALOGO#/g, getRandomColorName());
-    // addInner("iniTabel", content);
+    let content =
+        isiTabel.replace("#NAMA#", value.mahasiswa.nama)
+            .replace("#NPM#", value.mahasiswa.npm)
+            .replace("#PROGRAM STUDI#", value.mahasiswa.program_studi?value.mahasiswa.program_studi.nama:"#PROGRAM STUDI#")
+            .replace("#FAKULTAS#", value.mahasiswa.fakultas?value.mahasiswa.fakultas.nama:"#FAKULTAS#")
+            .replace("#KODEMATKUL#", value.mata_kuliah?value.mata_kuliah[0].kode_matkul:"#KODEMATKUL#")
+            .replace("#NAMAMATKUL#", value.mata_kuliah?value.mata_kuliah[0].nama:"NAMAMATKUL")
+            .replace("#SKS#", value.mata_kuliah ? value.mata_kuliah[0].sks : "#SKS#")
+            .replace("#NILAI#", value.mata_kuliah ? value.mata_kuliah[0].nilai : "#NILAI#")
+            .replace("#WARNA#", getRandomColor())
+            .replace(/#WARNALOGO#/g, getRandomColorName());
+    addInner("iniTabel", content);
 }
