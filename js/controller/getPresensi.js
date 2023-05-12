@@ -7,7 +7,7 @@ export function isiTablePresensi(results) {
 function isiRow(value) {
     console.log(value)
     let content =
-        isiTabelPresensi.replace("#NAMA#", value.biodata.nama)
+        isiTabelPresensi.replace("#NAMA#", value.biodata.nama?value.biodata.nama:"#NAMA#")
             .replace("#NOHP#", value.biodata.phone_number ? value.biodata.phone_number : (value.phone_number ? value.phone_number : '#NOHP#'))
             .replace("#JABATAN#", value.biodata.jabatan)
             .replace("#LOKASI#", value.location)
