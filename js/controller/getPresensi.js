@@ -5,7 +5,7 @@ export function isiTablePresensi(results) {
     results.forEach(isiRow);
 }
 function isiRow(value) {
-    // console.log(value.jam_kerja)
+    console.log(value)
     let content =
         isiTabelPresensi.replace("#NAMA#", value.biodata.nama)
             .replace("#NOHP#", value.biodata.phone_number ? value.biodata.phone_number : (value.phone_number ? value.phone_number : '#NOHP#'))
