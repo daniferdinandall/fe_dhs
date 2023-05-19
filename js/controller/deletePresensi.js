@@ -1,5 +1,6 @@
-function deleteData() {
-    var presensiId = document.querySelector('a[data-presensi-id]').getAttribute('data-presensi-id');
+function deleteData(IDHAPUS) {
+    // var presensiId = document.querySelector('a[data-presensi-id]').getAttribute('data-presensi-id');
+    var presensiId = IDHAPUS;
     var target_url = "https://ws-dani.herokuapp.com/delete/" + presensiId;
 
     var requestOptions = {
